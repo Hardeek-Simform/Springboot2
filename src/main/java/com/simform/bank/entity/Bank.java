@@ -14,7 +14,7 @@ public class Bank {
     private int customerId;
     private String userName;
     private BankName bankName;
-    String emailId;
+    private String emailId;
     private int bankManagerId;          // non required data
     private String bankManagerName;     // non required data
     private double accountBalance;      // confidential data
