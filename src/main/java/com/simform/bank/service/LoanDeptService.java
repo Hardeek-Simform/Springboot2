@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Service
 public class LoanDeptService {
     @Autowired
-    CustomerDTOMapper customerDTOMapper;
+    private CustomerDTOMapper customerDTOMapper;
 
     public ArrayList<CustomerDTO> loanForHdfc() {
         ArrayList<Bank> customers = Customer.getCustomerList();
@@ -24,7 +24,7 @@ public class LoanDeptService {
 
     public ArrayList<CustomerDTO> loanForKotak() {
         ArrayList<Bank> customers = Customer.getCustomerList();
-        ArrayList<CustomerDTO> dtoList = (ArrayList<CustomerDTO>) customers.stream().filter(e -> e.getBankName() == BankName.Kotak).map(e -> new CustomerDTO(e.getCustomerId(), e.getUserName(), e.getEmailId())).collect(Collectors.toList());
+        ArrayList<CustomerDTO> dtoList = (ArrayList<CustomerDTO>) customers.stream().filter(e -> e.getBankName() == BankName.Kotak).map(customerDTOMapper).collect(Collectors.toList());
         return dtoList;
     }
 }

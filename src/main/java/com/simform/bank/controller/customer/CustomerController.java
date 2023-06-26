@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @RequestMapping("/bankCustomer")
 public class CustomerController {
     @Autowired
-    BankService bankService;
+    private BankService bankService;
 
     @GetMapping("/list")
     public ArrayList<Bank> displayAllUsers() {
