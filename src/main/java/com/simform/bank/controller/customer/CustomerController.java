@@ -13,25 +13,25 @@ public class CustomerController {
     @Autowired
     private BankService bankService;
 
-    @GetMapping("/list")
+    @GetMapping
     public ArrayList<Bank> displayAllUsers() {
         return bankService.getCustomerList();
     }
 
-    @PostMapping("/add")
+    @PostMapping
     public ArrayList<Bank> addUser(@RequestBody Bank bank) {
         ArrayList<Bank> updatedList = bankService.setCustomer(bank);
         return updatedList;
     }
 
-    @PutMapping("/update")
+    @PutMapping
     public ArrayList<Bank> updateUser(@RequestBody Bank bank) {
         ArrayList<Bank> updatedList = bankService.updateCustomer(bank);
         return updatedList;
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ArrayList<Bank> deleteUser(@PathVariable("id") int id) {
+    @DeleteMapping("/{id}")
+    public ArrayList<Bank> deleteUserById(@PathVariable("id") int id) {
         ArrayList<Bank> updatedList = bankService.deleteCustomer(id);
         return updatedList;
     }
