@@ -31,7 +31,7 @@ public class CustomerController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ArrayList<Bank> deleteUser(@PathVariable("id")int id) {
+    public ArrayList<Bank> deleteUser(@PathVariable("id") int id) {
         ArrayList<Bank> updatedList = bankService.deleteCustomer(id);
         return updatedList;
     }

@@ -6,6 +6,7 @@ import com.simform.bank.entity.dto.CustomerDTOMapper;
 import com.simform.bank.entity.enums.BankName;
 import com.simform.bank.repository.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
